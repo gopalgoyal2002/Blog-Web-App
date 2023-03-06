@@ -1,0 +1,30 @@
+service: backend
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  memorySize: 2048
+  stage: dev
+  timeout: 15
+  region: us-east-1
+  runtime: nodejs12.x
+# plugins:
+#   - serverless-webpack
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+
+functions:
+  hello:
+   handler: handler.hello
+   events:
+     - http: ANY /{proxy+}
+     - http: ANT /
+   environment:
+    DBUSERNAME: gopalgoyal612002
+    DBPASSWORD: Gopalgoyal   
+    DATABASE: mongodb+srv://gopalgoyal612002:Gopalgoyal@cluster0.zv9ipxh.mongodb.net/?retryWrites=true&w=majority
+    PORT: 8000
+    SECRET: gopalgoyal
+

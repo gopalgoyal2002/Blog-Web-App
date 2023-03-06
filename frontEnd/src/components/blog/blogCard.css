@@ -1,0 +1,10 @@
+.auther{
+    font-weight: 500;
+}
+.blog-card{
+    margin-bottom: 20px;
+}
+.blog-card h3:hover
+{
+    text-decoration: underline;
+}
